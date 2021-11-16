@@ -1,13 +1,22 @@
 import {Entity, Column, PrimaryGeneratedColumn, BaseEntity} from 'typeorm'
 
-@Entity('client')
-export class Client extends BaseEntity {
+@Entity('accounts')
+export class Account extends BaseEntity {
+
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  firstname: string;
+  username: string;
+
+  @Column()
+  password: string;
+
+  @Column()
+  name: string;
 
   @Column()
   lastname: string;
+
+
 }

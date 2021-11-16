@@ -1,15 +1,20 @@
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
-import { Client } from '../models/User';
+import { Account } from '../models/account.model';
 
 export const getUsuarios = async(req: Request, res: Response) => {
 
-    const users = await getRepository(Client).find();
+    // const users = await getRepository(Account).find();
 
-    // return res.json({
-    //     msg: 'getUsuarios',
+    return res.json({
+        msg: 'getUsuarios',
+    })
+    // return res.json(users)
 
-    // })
-    return res.json(users)
+}
 
+export const createUsuario = async(req: Request, res: Response) => {
+    return res.json({
+        body: req.body
+    })
 }
