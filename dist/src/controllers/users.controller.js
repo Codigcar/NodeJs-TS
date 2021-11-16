@@ -10,14 +10,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getUsuarios = void 0;
+const typeorm_1 = require("typeorm");
+const User_1 = require("../models/User");
 const getUsuarios = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    // const users = await getRepository(User).find();
+    const users = yield (0, typeorm_1.getRepository)(User_1.Client).find();
     // return res.json({
     //     msg: 'getUsuarios',
     // })
-    return res.json({
-        msg: 'hola'
-    });
+    return res.json(users);
 });
 exports.getUsuarios = getUsuarios;
 //# sourceMappingURL=users.controller.js.map
